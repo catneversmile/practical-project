@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width">
+    <meta name="description" content="ego"/>
+    <meta name="keywords" content="ego"/>
+    <title>ego</title>
+    <link href="../../common/base.css" rel="stylesheet"/>
+    <link href="../../page/works/create.css" rel="stylesheet"/>
+</head>
+<body>
+	<!-- 顶栏 -->
+<div class="g-header" id="g-header">
+	<div class="container">
+		<img class="logo" src="../../res/logo.png">
+		<div class="m-tabs m-tabs-1" id="hdtabs">
+			<ul class="f-cb">
+				<li class="z-active"><a href="/index">首页</a></li>
+				<li><a href="/works">作品</a></li>
+				<li><a href="javascript:void">圈子</a></li>
+				<li><a href="javascript:void">奇思妙想</a></li>
+			</ul>
+		</div>
+		<!-- 搜索框 -->
+		<form action="/search" id="search" method="GET">
+			<div class="u-search u-search-1">
+				<input type="text" id="keyword" name="keyword" placeholder="输入搜索内容">
+				<button class="u-icon-search" type="submit"></button>
+			</div>
+		</form>	
+		<!-- 登录状态 -->
+		<div class="guest" id="guest">
+			<button class="u-btn u-btn-primary u-btn-lg" id="login">登录</button>
+			<button class="u-btn u-btn-lg u-btn-link" id="register">注册</button>
+		</div>
+		<!-- 用户信息 -->
+		<div class="m-user hide" id="userdropdown">
+			<div class="user_info">
+				<span class="user_avatar">
+					<img src="/res/images/avatar.png" alt="">
+				</span>
+				<span>
+					<span class="user_name">IamAmber</span>
+					<span class="u-icon" id="sex"></span>
+				</span>
+				<span class="u-icon u-icon-down"></span>
+			</div>				
+			<ul class="user_list">
+				<li>个人中心</li>
+				<li>信息</li>
+				<li>设置</li>
+				<li id="logout">退出帐号</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- 主体 -->
+<form class="g-body">
+<div class="g-main">
+	<div class="g-head">
+		<div class="classify">
+			<div class="u-cnt">作品分类
+				<label>
+					<input type="radio" name="category" id="original" value="0" checked>
+					<span class="u-btn">原 创</span>
+				</label>
+				<label>
+					<input type="radio" name="category" id="imitate" value="1">
+					<span class="u-btn">临 摹</span>
+				</label>
+			</div>
+			<div class="m-upload">上传图片
+				<label  class="u-btn" for="upload-file" >选择图片上传	</label>
+				<div class="progress">
+					<progress id="fileUploadPro" value="0" max="0"></progress>
+					<em id="progressInfo"></em>					
+				</div>
+				<input type="file" accept="image/*" id="upload-file" multiple></input>	
+				<span>提示：作品可以包含多张图片，一次可选择多张图片，最多不超过10张（单张图片大小小于10M）</span>
+			</div>
+		</div>			
+	</div>
+	<div class="showImg" id="showImg">
+
+		<li class="imgItem">			
+			<i class="u-icon u-icon-delete"></i>
+			<img src="../../res/images/perfect1.png" alt="">
+			<span class="u-btn">设为封面</span>
+		</li>
+		<li class="imgItem">			
+			<i class="u-icon u-icon-delete"></i>
+			<img src="../../res/images/perfect1.png" alt="">
+			<span class="u-btn">设为封面</span>
+		</li>
+	</div>
+	<fieldset class="workInfo">
+		<div  class="workName">
+			<label for="workName">作品名称</label>
+			<input type="text" name="workName" id="workName">
+			<span class="errormsg" style="opacity: 0;">请取一个名字！</span>
+		</div>
+		<div  class="describe">
+			<label for="describe">作品说明</label>
+			<textarea type="text" name="describe" id="describe"></textarea>
+		</div>
+		<div  class="tags">
+			<label>标签</label>
+			<div id="tag-contain" class="tag-contain"></div>
+		</div>
+		<div class="recommend">
+			<label>推荐标签</label>
+			<div id="recommend"></div>
+		</div>
+		<button class="build" id="create">创建</button>
+		<!-- <div id="tag-contain"></div> -->
+		<!-- <ul class="m-tag">
+			<li class="tag">
+				<button class="close">x</button>
+				<span>少女系</span>
+			</li>
+			<li class="tag tag-add focused">
+				<input type="text" class="u-inp">
+				<span class="txt">+ 自定义标签</span>
+			</li>
+		</ul>		 -->
+	</fieldset>
+</div>
+
+<div class="g-side">
+	<div>
+	<fieldset>
+		<legend>权限设置</legend>
+		<div class="m-privilege">
+			<label class="u-radio">
+				<input name="privilege"  type="radio" value="0" checked>
+				<i class="u-icon-radio"></i>
+				<i class="u-icon-radiochecked"></i>
+				<span>所有人可见</span>
+			</label>
+			<label class="u-radio">
+				<input name="privilege"  type="radio" value="1">
+				<i class="u-icon-radio"></i>
+				<i class="u-icon-radiochecked"></i>
+				<span>仅粉丝好友可见</span>
+			</label>
+			<label class="u-radio">
+				<input name="privilege"  type="radio" value="2">
+				<i class="u-icon-radio"></i>
+				<i class="u-icon-radiochecked"></i>
+				<span>仅自己可见</span>
+			</label>		
+		</div>
+		<legend>作品授权</legend>
+		<select class="authorization" name="authorization" id="authorization">
+			<option value="0">不限制作品用途</option>
+			<option value="1">转发注明，禁止商用</option>
+		</select>		
+	</fieldset>		
+	</div>
+</div>
+</form>
+
+<script src="../../page/index.js"></script>
+<script src="../../page/works/create.js"></script>
+</body>
+</html>

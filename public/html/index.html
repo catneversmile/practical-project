@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width">
+    <meta name="description" content="ego"/>
+    <meta name="keywords" content="ego"/>
+    <title>ego</title>
+    <link href="../common/base.css" rel="stylesheet"/>
+    <link href="../page/index.css" rel="stylesheet"/>
+</head>
+<body>
+	<!-- 顶栏 -->
+	<div class="g-header" id="g-header">
+		<div class="container">
+			<img class="logo" src="../res/logo.png">
+			<div class="m-tabs m-tabs-1" id="hdtabs">
+				<ul class="f-cb">
+					<li class="z-active"><a href="./index.html">首页</a></li>
+					<li><a href="./works/list.html">作品</a></li>
+					<li><a href="javascript:void">圈子</a></li>
+					<li><a href="javascript:void">奇思妙想</a></li>
+				</ul>
+			</div>
+			<!-- 搜索框 -->
+			<form action="/search" id="search" method="GET">
+				<div class="u-search u-search-1">
+					<input type="text" id="keyword" name="keyword" placeholder="输入搜索内容">
+					<button class="u-icon-search" type="submit"></button>
+				</div>
+			</form>	
+			<!-- 登录状态 -->
+			<div class="guest" id="guest">
+				<button class="u-btn u-btn-primary u-btn-lg" id="login">登录</button>
+				<button class="u-btn u-btn-lg u-btn-link" id="register">注册</button>
+			</div>
+			<!-- 用户信息 -->
+			<div class="m-user hide" id="userdropdown">
+				<div class="user_info">
+					<span class="user_avatar">
+						<img src="../res/images/avatar.png" alt="">
+					</span>
+					<span>
+						<span class="user_name">IamAmber</span>
+						<span class="u-icon" id="sex"></span>
+					</span>
+					<span class="u-icon u-icon-down"></span>
+				</div>				
+				<ul class="user_list">
+					<li>个人中心</li>
+					<li>信息</li>
+					<li>设置</li>
+					<li id="logout">退出帐号</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- banner -->
+	<div class="g-banner">
+	</div>
+	<div class="g-body">
+		<!-- 主栏 -->
+		<div class="g-main">
+			<div class="m-section">
+				<h4 class="section_head  section_head_1">
+					<i class="u-icon u-icon-diamond"></i>/精选推荐/
+					<span class="section_more">更多<i class="u-icon u-icon-right"></i></span>
+				</h4>
+				<ul class="section_cnt m-list m-list-1">
+					<li class="m-card-3"><img src="../res/images/perfect1.png" alt=""></li>
+					<li class="m-card-3"><img src="../res/images/perfect2.png" alt=""></li>
+					<li class="m-card-3"><img src="../res/images/perfect3.png" alt=""></li>
+					<li class="m-card-3"><img src="../res/images/perfect4.png" alt=""></li>				
+				</ul>
+			</div>
+
+			<div class="m-section">
+				<h4 class="section_head">
+					<i class="u-icon u-icon-star"></i>/明日之星/
+					<span class="section_more">更多<i class="u-icon u-icon-right"></i></span>
+				</h4>
+				<ul class="section_cnt m-list m-list-3" id="starlist">				
+				</ul>
+			</div>
+
+			<div class="m-section">
+				<h4 class="section_head">
+					<i class="u-icon u-icon-daily"></i>/最新作品/
+					<span class="section_more">更多<i class="u-icon u-icon-right"></i></span>
+				</h4>
+				<ul class="section_cnt m-list m-list-2">
+				<li class="m-card"><img src="" alt="">我的作品名字</li>				
+				</ul>
+			</div>
+
+			<div class="m-section">
+				<h4 class="section_head">
+					<i class="u-icon u-icon-clock"></i>/活动进行时/
+					<span class="section_more">更多<i class="u-icon u-icon-right"></i></span>
+				</h4>
+				<ul class="section_cnt m-list m-list-3">				
+				</ul>
+			</div>
+
+			<div class="m-section">
+				<h4 class="section_head">
+					<i class="u-icon u-icon-heart"></i>/我们都爱原创/
+					<span class="section_more">更多<i class="u-icon u-icon-right"></i></span>
+				</h4>
+				<ul class="section_cnt m-list m-list-3">				
+				</ul>
+			</div>
+
+			<div class="m-section">
+				<h4 class="section_head">
+					<i class="u-icon u-icon-heart"></i>/我们都是同人粉/
+					<span class="section_more">更多<i class="u-icon u-icon-right"></i></span>
+				</h4>
+				<ul class="section_cnt m-list m-list-3">				
+				</ul>
+			</div>
+
+
+			<div class="m-section">
+				<h4 class="section_head">
+					<i class="u-icon"></i>/看谁临摹的最好/
+					<span class="section_more">更多<i class="u-icon u-icon-right"></i></span>
+				</h4>
+				<ul class="section_cnt m-list m-list-3">				
+				</ul>
+			</div>
+		</div>
+		<!-- 边栏 -->
+		<div class="g-side">
+			<div class="m-sub">
+				<h4 class="sub_head">
+					<span class="sub_name" style="text-indent: 70px"><img class="buddha" src="../res/images/buddha.png" >我的作品</span>
+					<span class=" sub_movable"><span class=" u-icon u-icon-bottom"></span></span>
+				</h4>
+				<div class="sub_list sub_list_1">	
+					<img src="../res/images/mywork.png">
+				</div>
+			</div>
+
+			<div class="m-sub m-sub-1">
+				<h4 class="sub_head">
+					<span class="sub_name">活跃圈子</span>
+					<span class="">创建圈子</span>
+				</h4>
+				<ul class="sub_list sub_list_2">
+					<li class="u-group">
+						<img src="../res/images/fan.png">
+						<div class="authorInfo">
+							<span>门口小贩</span>
+							<span>已圈 5221人</span>
+						</div>
+					</li>
+					<li class="u-group">
+						<img src="../res/images/fan.png">
+						<div class="authorInfo">
+							<span>原画集中营</span>
+							<span>已圈 5221人</span>
+						</div>
+					</li>
+					<li class="u-group">
+						<img src="../res/images/fan.png">
+						<div class="authorInfo">
+							<span>-CatNeverSmile-</span>
+							<span>已圈 5221人</span>
+						</div>
+					</li>
+				</ul>				
+				<div class="sub_foot">更多<span class="u-icon u-icon-right"></span></div>
+			</div>
+
+			<div class="m-sub">
+				<h4 class="sub_head">
+					<span class="sub_name">热门话题</span>
+				</h4>
+				<ol class="sub_list sub_list_1">
+					<li>想不出来测试用什么标题啊，烦烦烦烦烦烦烦烦烦烦烦烦</li>
+					<li>想不出来测试用什么标题啊，烦烦烦烦烦烦烦烦烦烦烦烦</li>
+					<li>想不出来测试用什么标题啊，烦烦烦烦烦烦烦烦烦烦烦烦</li>
+					<li>想不出来测试用什么标题啊，烦烦烦烦烦烦烦烦烦烦烦烦</li>
+					<li>想不出来测试用什么标题啊，烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦</li>
+				</ol>
+				<div class="sub_foot">更多<span class="u-icon u-icon-right"></span></div>
+			</div>
+
+			<div class="m-sub">
+				<h4 class="sub_head">
+					<span class="sub_name">排行</span>
+					<div class="m-tabs m-tabs-1 sub_list" id="subtabs">
+						<ul class="f-cb">
+							<li class=""><a href="javascript:void">原创</a></li>
+							<li><a href="javascript:void">同人</a></li>
+							<li><a href="javascript:void">临摹</a></li>
+						</ul>
+					</div>
+				</h4>
+				<ul class="sub_list sub_list_2 sub_list_3">
+					<li class="u-group u-group-1">
+						<img src="../res/images/rank.png">
+						<div class="authorInfo">
+							<span>我的作品名称</span>
+							<span>用户名</span>
+							<div><span>查看 522</span><span>收藏 52</span></div>
+						</div>
+					</li>
+					<li class="u-group u-group-1">
+						<img src="../res/images/rank.png">
+						<div class="authorInfo">
+							<span>我的作品名称</span>
+							<span>用户名</span>
+							<div><span>查看 522</span><span>收藏 52</span></div>
+						</div>
+					</li>
+					<li class="u-group u-group-1">
+						<img src="../res/images/rank.png">
+						<div class="authorInfo">
+							<span>我的作品名称</span>
+							<span>用户名</span>
+							<div><span>查看 522</span><span>收藏 52</span></div>
+						</div>
+					</li>
+					<li class="u-group u-group-1">
+						<img src="../res/images/rank.png">
+						<div class="authorInfo">
+							<span>我的作品名称</span>
+							<span>用户名</span>
+							<div><span>查看 522</span><span>收藏 52</span></div>
+						</div>
+					</li>
+					<li class="u-group u-group-1">
+						<img src="../res/images/rank.png">
+						<div class="authorInfo">
+							<span>我的作品名称</span>
+							<span>用户名</span>
+							<div><span>查看 522</span><span>收藏 52</span></div>
+						</div>
+					</li>
+					<li class="u-group u-group-1">
+						<img src="../res/images/rank.png">
+						<div class="authorInfo">
+							<span>我的作品名称</span>
+							<span>用户名</span>
+							<div><span>查看 522</span><span>收藏 52</span></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="m-sub">
+				<h4 class="sub_head">
+					<span class="sub_name">热门话题</span>
+				</h4>
+				<ol class="sub_list">
+						<li class="m-card m-card-1">
+							<img src="../res/images/follower.png" alt="">
+							<div class="card_info">
+								<div>Grinch</div>
+								<div><span>作品 123</span><span>粉丝 3434</span></div>
+							</div>							
+						</li>
+						<li class="m-card m-card-1">
+							<img src="../res/images/follower.png" alt="">
+							<div class="card_info">
+								<div>Grinch</div>
+								<div><span>作品 123</span><span>粉丝 3434</span></div>
+							</div>							
+						</li>
+						<li class="m-card m-card-1">
+							<img src="../res/images/follower.png" alt="">
+							<div class="card_info">
+								<div>Grinch</div>
+								<div><span>作品 123</span><span>粉丝 3434</span></div>
+							</div>							
+						</li>
+						<li class="m-card m-card-1">
+							<img src="../res/images/follower.png" alt="">
+							<div class="card_info">
+								<div>Grinch</div>
+								<div><span>作品 123</span><span>粉丝 3434</span></div>
+							</div>							
+						</li>
+						<li class="m-card m-card-1">
+							<img src="../res/images/follower.png" alt="">
+							<div class="card_info">
+								<div>Grinch</div>
+								<div><span>作品 123</span><span>粉丝 3434</span></div>
+							</div>							
+						</li>
+				</ol>
+				<div class="sub_foot sub_foot_1"><span class="u-icon u-icon-bottom"></span></div>
+			</div>
+	</div>
+	<!-- <div class="m-cascadeselect" id="location"></div> -->
+
+	<!-- 底部 -->
+	<div class="g-footer">
+		<div class="foot-left">
+			<span>/友情链接/</span>
+		</div>
+		<div class="foot-right">
+			/关于我们/
+		</div>
+	</div>
+<script src="../common/md5.js"></script>
+<script src="../common/address_codes.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script src="../page/index.js"></script>
+<script>App.page.init()</script>
+</body>
+</html>

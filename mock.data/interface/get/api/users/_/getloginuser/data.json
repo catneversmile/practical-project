@@ -1,0 +1,16 @@
+{
+    "code": 200,
+    "msg": "DVguN7bavt",
+    "result": {
+        "id": 84586,
+        "username": "1958",
+        "nickname": "catneversmile",
+        "sex": 1,
+        "province": 330000,
+        "city": 330200,
+        "district": 330204,
+        "birthday": "2000-12-03",
+        "createTime": 1529678403216,
+        "updateTime": 1529676560646
+    }
+}
