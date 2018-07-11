@@ -420,7 +420,7 @@ var App = {
 	StarList.prototype.renderItem = function(item){
 		var config = item.isFollow ? starConfig[0]:starConfig[1];
 		var html = `<li class="m-card">
-									<img src="../res/images/follower.png" alt="">
+									<img src="./res/images/follower.png" alt="">
 									<div class="card_info">
 										<div>${item.nickname}</div>
 										<div><span>作品 ${item.workCount}</span><span>粉丝 ${item.followCount}</span></div>
@@ -667,7 +667,7 @@ var App = {
 //注册页面模块 
 (function(App){
 	var html = `<div>
-		<div class="modal_head modal_head_1"><img src="../res/logo.png" alt=""></div>
+		<div class="modal_head modal_head_1"><img src="./res/logo.png" alt=""></div>
 		<form action="" class="m-form" id="loginform">
 			<div class="u-formitem u-formitem-1" for=""><label>手机号<input id="username" type="text" placeholder="请输入手机号码"></label></div>
 			<div class="u-formitem u-formitem-1"><label><input id="nickname" type="text" placeholder="昵称">昵称</label></div>
@@ -1024,7 +1024,7 @@ var App = {
 			this.initStarList();
 			this.slider = new App.Slider({
 				index:1, 
-				imagesUrl:['../res/images/banner0.jpg','../res/images/banner1.jpg','../res/images/banner2.jpg','../res/images/banner3.jpg'],
+				imagesUrl:['./res/images/banner0.jpg','./res/images/banner1.jpg','./res/images/banner2.jpg','./res/images/banner3.jpg'],
 				container:document.getElementsByClassName('g-banner')[0],
 				interval:2000							
 			});	
